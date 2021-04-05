@@ -1,0 +1,18 @@
+language: python
+
+python:
+  - "3.8"
+  
+
+before_install:
+  - pip install codecov
+
+
+install:
+  - pip install -r requirements.txt
+script:
+    - python setup.py install
+    - pip install aiogram peewee wrapcache
+    - coverage run -m py.test tests
+    - bash <(curl -s https://codecov.io/bash)
+  
