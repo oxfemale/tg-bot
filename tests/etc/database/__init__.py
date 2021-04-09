@@ -1,4 +1,3 @@
-from tg_bot.etc.database import models
+import tg_bot
 
-
-models.create_tables()
+tg_bot.migrate()

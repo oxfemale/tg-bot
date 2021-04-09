@@ -16,8 +16,6 @@ def make_table_name(model):
 
 
 class DataBase(peewee.Model):
-    CREATE_FIRST_RECORD = False
-
     class Meta:
         database = settings.DATABASE["peewee_engine"]
         table_function = make_table_name
@@ -82,10 +80,7 @@ class TgBotBitcoinAddresses(DataBase):
 class TgBotSettings(DataBase):
     coinbase_api_key = peewee.IntegerField(null=True, help_text="Апи ключ коинбаз")
     coinbase_secret_key = peewee.IntegerField(null=True, help_text="Приват ключ коинбейза")
-    fiat_currency = fields.TextField(
-        default=settings.DEFAULT_FIAT_CURRENCY,
-        validators=[validators.fiat_currency_validator],
-        help_text="Валюта в боте")
+    fiat_currency = fields.TextField(validators=[validators.fiat_currency_validator], help_text="Валюта в боте")
 
     CREATE_FIRST_RECORD = True
 
@@ -115,12 +110,3 @@ class Users(DataBase):
             user_model = cls
 
         return user_model
-
-
-def create_tables():
-    for model in DataBase().get_models():
-        if model.table_exists() is False and model.is_modified() is False:
-            model.create_table()
-
-            if model.CREATE_FIRST_RECORD:
-                model.create()
