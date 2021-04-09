@@ -3,7 +3,7 @@ apscheduler>=3.6.3
 peewee-migrate>=1.4.0
 cached-property>=1.5.2
 peewee-extra-fields>=2.8.2
-myqiwi @ https://github.com/daveusa31/myqiwi/archive/a452ae33fa87197d11b9e6604e0e2b1c3ae092aa.zip
+myqiwi @ https://github.com/daveusa31/myqiwi/archive/391ccdf04261dc0241c13c826d3495fa1c819e98.zip
 bit-help @ https://github.com/daveusa31/bit-help/archive/54b93f94946ff1f4c122aeb0e7d02dcc1559bd3f.zip
 wrapcache @ https://github.com/daveusa31/wrapcache/archive/be06f720b0fbadd737dd547d22bb4faa803ee4a5.zip
 yandex-money-sdk @ https://github.com/daveusa31/yandex-money-sdk-python/archive/94b40b926d7ecf9f7bf153d32b82bd5ae4e2699c.zip
