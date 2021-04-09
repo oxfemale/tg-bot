@@ -52,14 +52,6 @@ class State(DataBase):
     bucket = peewee_extra_fields.JSONField(null=True)
 
 
-class TgBotInfo(DataBase):
-    amount_messages = peewee.IntegerField(unique=True, default=0, help_text="Кол-во полученных сообщений")
-    amount_callbacks = peewee.IntegerField(unique=True, default=0, help_text="Кол-во полученных каллбеков")
-    amount_inlines = peewee.IntegerField(unique=True, default=0, help_text="Кол-во полученных инлайнов")
-
-    CREATE_FIRST_RECORD = True
-
-
 class Broadcast(DataBase):
     starter_chat_id = peewee.IntegerField(help_text="Чай айди, кто запустил")
     text = peewee.TextField(help_text="Текст рассылки")
